@@ -18,7 +18,7 @@ class App extends React.Component {
       <Provider store={Store}>
         <ContactFormComponent onSubmit={
             (data) => {
-
+                Store.dispatch(Actions.IncreaseCounter);
             }
         } />
       </Provider>
