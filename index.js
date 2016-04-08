@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider, connect } from 'react-redux'
 
 import CounterComponent from './components/CounterComponent'
+import ContactFormComponent from './components/ContactFormComponent'
 import Actions from './redux/Actions'
 import Store from './redux/Store'
 import CounterReducer from './redux/reducers/CounterReducer'

@@ -4,7 +4,6 @@ import React, { Component, PropTypes } from 'react'
 
 class CounterComponent extends Component {
   render() {
-
     const { value, onIncreaseClick, onDecreaseClick } = this.props
 
     return (
