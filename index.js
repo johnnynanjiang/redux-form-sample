@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import { Provider, connect } from 'react-redux'
 
-import Counter from './components/Counter'
+import CounterComponent from './components/CounterComponent'
 import Actions from './redux/Actions'
 import Store from './redux/Store'
 import CounterReducer from './redux/reducers/CounterReducer'
@@ -26,7 +26,7 @@ function mapDispatchToProps(dispatch) {
 let App = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Counter)
+)(CounterComponent)
 
 ReactDOM.render(
   <Provider store={Store}>

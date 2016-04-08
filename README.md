@@ -1,4 +1,4 @@
-This project is based on ![simplest-redux-example by jackielii](https://github.com/jackielii/simplest-redux-example)
+This project is based on [simplest-redux-example by jackielii](https://github.com/jackielii/simplest-redux-example)
 
 To run this example:
 

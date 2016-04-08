@@ -2,25 +2,25 @@
 
 import React, { Component, PropTypes } from 'react'
 
-class Counter extends Component {
+class CounterComponent extends Component {
   render() {
 
     const { value, onIncreaseClick, onDecreaseClick } = this.props
 
     return (
       <div>
-        <span>{value}</span>
         <button onClick={onIncreaseClick}>+</button>
+        <span style={{padding: 10}}>{value}</span>
         <button onClick={onDecreaseClick}>-</button>
       </div>
     )
   }
 }
 
-Counter.propTypes = {
+CounterComponent.propTypes = {
   value: PropTypes.number.isRequired,
   onIncreaseClick: PropTypes.func.isRequired,
   onDecreaseClick: PropTypes.func.isRequired
 }
 
-export default Counter
+export default CounterComponent
