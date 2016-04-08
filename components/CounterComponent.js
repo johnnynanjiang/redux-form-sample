@@ -1,8 +1,11 @@
 'use strict'
 
 import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 
-class CounterComponent extends Component {
+import Actions from '../redux/Actions'
+
+class Counter extends Component {
   render() {
     const { value, onIncreaseClick, onDecreaseClick } = this.props
 
@@ -16,10 +19,31 @@ class CounterComponent extends Component {
   }
 }
 
-CounterComponent.propTypes = {
+Counter.propTypes = {
   value: PropTypes.number.isRequired,
   onIncreaseClick: PropTypes.func.isRequired,
   onDecreaseClick: PropTypes.func.isRequired
 }
+
+// Map Redux state to component props
+function mapStateToProps(state) {
+  return {
+    value: state.count
+  }
+}
+
+// Map Redux actions to component props
+function mapDispatchToProps(dispatch) {
+  return {
+    onIncreaseClick: () => dispatch(Actions.IncreaseAction),
+    onDecreaseClick: () => dispatch(Actions.DecreaseAction),
+  }
+}
+
+// Connected Component
+let CounterComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Counter)
 
 export default CounterComponent
