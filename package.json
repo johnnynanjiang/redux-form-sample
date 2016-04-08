@@ -1,0 +1,39 @@
+{
+  "name": "redux-form-sample",
+  "version": "0.0.1",
+  "description": "redux form sample",
+  "main": "index.js",
+  "scripts": {
+    "start": "watchify --extension=js -o bundle.js index.js & python -m SimpleHTTPServer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnnynanjiang/redux-form-sample.git"
+  },
+  "keywords": [
+    "redux",
+    "react"
+  ],
+  "author": "Nan Jiang",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "homepage": "https://github.com/johnnynanjiang/redux-form-sample#readme",
+  "dependencies": {
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-redux": "^3.1.0",
+    "redux": "^3.0.0"
+  },
+  "devDependencies": {
+    "browserify": "~10.2.4",
+    "babelify": "~6.1.2",
+    "watchify": "^3.3.1"
+  }
+}
