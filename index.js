@@ -10,7 +10,7 @@ import CounterReducer from './redux/reducers/CounterReducer'
 
 ReactDOM.render(
   <Provider store={Store}>
-    <CounterComponent />
+    <ContactFormComponent />
   </Provider>,
   document.getElementById('root')
 )

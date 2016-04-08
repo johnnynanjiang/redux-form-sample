@@ -27,8 +27,9 @@ Counter.propTypes = {
 
 // Map Redux state to component props
 function mapStateToProps(state) {
+  let thisState = state.counter;
   return {
-    value: state.counter.count
+    value: thisState.count
   }
 }
 
