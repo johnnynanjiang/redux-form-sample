@@ -3,9 +3,9 @@
 function counter(state = { count: 0 }, action) {
   let count = state.count
   switch (action.type) {
-    case 'increase':
+    case 'increaseCounter':
         return { count: count + 1 }
-    case 'decrease':
+    case 'decreaseCounter':
         return { count: count - 1}
     default:
         return state

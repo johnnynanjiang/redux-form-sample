@@ -36,8 +36,8 @@ function mapStateToProps(state) {
 // Map Redux actions to component props
 function mapDispatchToProps(dispatch) {
   return {
-    onIncreaseClick: () => dispatch(Actions.IncreaseAction),
-    onDecreaseClick: () => dispatch(Actions.DecreaseAction),
+    onIncreaseClick: () => dispatch(Actions.IncreaseCounter),
+    onDecreaseClick: () => dispatch(Actions.DecreaseCounter),
   }
 }
 

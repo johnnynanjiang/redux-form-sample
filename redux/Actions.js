@@ -1,6 +1,6 @@
 'use strict'
 
-const increaseAction = { type: 'increase' }
-const decreaseAction = { type: 'decrease' }
+const increaseCounter = { type: 'increaseCounter' }
+const decreaseCounter = { type: 'decreaseCounter' }
 
-export default {IncreaseAction: increaseAction, DecreaseAction: decreaseAction}
+export default {IncreaseCounter: increaseCounter, DecreaseCounter: decreaseCounter}
