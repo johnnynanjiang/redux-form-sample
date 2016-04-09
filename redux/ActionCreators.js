@@ -2,10 +2,16 @@
 
 var formSubmitActionCreator = function (formData) {
     console.log('formSubmitActionCreator');
-    console.log(formData);
-    return {
-        type: 'formSubmit',
-        formData
+
+    return function(dispatch) {
+        setTimeout(function() {
+            console.log("async action dispatching, formData is:");
+            console.log(formData);
+            dispatch({
+                type: 'formSubmit',
+                formData
+            })
+        }, 5000)
     }
 }
 
