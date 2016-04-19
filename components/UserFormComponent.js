@@ -17,8 +17,6 @@ class UserForm extends React.Component {
 
     render() {
         let { user, userForm, dispatch } = this.props;
-        console.log('this.props');
-        console.log(this.props);
 
         return (
             <form onSubmit={(e) => this.handleSubmit(e)}>
@@ -48,7 +46,7 @@ class UserForm extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return { user: state.user };
+    return { user: state.user, userForm: state.userForm };
 }
 
 export default connect(mapStateToProps)(UserForm);

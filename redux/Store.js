@@ -18,7 +18,7 @@ import CounterReducer from './reducers/CounterReducer'
 let reducers = combineReducers({
     counter: CounterReducer,
     user: modelReducer('user', initialUserState),
-    userForm: formReducer('user')
+    userForm: formReducer('user', initialUserState)
 })
 
 let store = applyMiddleware(thunkMiddleware)(createStore)(reducers)
