@@ -4,8 +4,12 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Field, actions } from 'react-redux-form';
 
+import ActionCreators from '../redux/ActionCreators'
+
 class UserForm extends React.Component {
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
+
         let { user, dispatch } = this.props;
 
         // Do whatever you like in here.
@@ -14,12 +18,14 @@ class UserForm extends React.Component {
         // actions.setValidity('user.firstName', user.firstName.length > 0);
         // actions.setSubmitted('user', true);
         // etc.
+
+        dispatch(ActionCreators.FormSubmitActionCreator(user));
     }
     render() {
         let { user } = this.props;
 
         return (
-            <form onSubmit={() => this.handleSubmit()}>
+            <form onSubmit={(e) => this.handleSubmit(e)}>
                 <Field model="user.firstName">
                     <label>First name:</label>
                     <input type="text" />

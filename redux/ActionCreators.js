@@ -1,6 +1,6 @@
 'use strict'
 
-function startFormSubmissionResponse() {
+function startFormSubmissionRequest() {
     console.log('startFormSubmissionResponse()');
     return {
         type: 'START_FORM_SUBMISSION_REQUEST'
@@ -35,9 +35,10 @@ function getFormSubmissionError(error) {
 
 var formSubmitActionCreator = function (formData) {
     console.log('formSubmitActionCreator');
+    console.log(formData);
 
     return function(dispatch) {
-        dispatch(startFormSubmissionResponse());
+        dispatch(startFormSubmissionRequest());
         return fetch('http://localhost:8000')
         .then((response) => {
             dispatch(getFormSubmissionResponse(response))
