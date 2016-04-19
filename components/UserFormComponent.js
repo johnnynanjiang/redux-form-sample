@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux'
-import { Field, actions } from 'react-redux-form';
+import { Field, actions, getField } from 'react-redux-form';
 
 import ActionCreators from '../redux/ActionCreators'
 
@@ -12,23 +12,26 @@ class UserForm extends React.Component {
 
         let { user, dispatch } = this.props;
 
-        // Do whatever you like in here.
-        // You can use redux simple form actions such as:
-        // actions.setPending('user', true);
-        // actions.setValidity('user.firstName', user.firstName.length > 0);
-        // actions.setSubmitted('user', true);
-        // etc.
-
         dispatch(ActionCreators.FormSubmitActionCreator(user));
     }
+
     render() {
-        let { user } = this.props;
+        let { user, userForm, dispatch } = this.props;
+        console.log('this.props');
+        console.log(this.props);
 
         return (
             <form onSubmit={(e) => this.handleSubmit(e)}>
-                <Field model="user.firstName">
+                <Field model="user.firstName"
+                   validators={{
+                    match: (val) => { val.trim().length > 0; }
+                   }}
+                   validateOn="blur"
+                >
                     <label>First name:</label>
                     <input type="text" />
+
+                    { getField(userForm, 'firstName').errors.match && <div>Firstname is empty.</div> }
                 </Field>
 
                 <Field model="user.lastName">
